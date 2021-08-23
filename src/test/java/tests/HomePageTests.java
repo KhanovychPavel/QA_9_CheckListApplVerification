@@ -1,6 +1,5 @@
 package tests;
 
-
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -13,11 +12,10 @@ public class HomePageTests extends TestBase {
     @BeforeMethod
     public void initTests() {
         inputPageHelper = PageFactory.initElements(driver, ItemInputPageHelper.class);
-
     }
 
     @Test
-    public void addNewListVerification () {
+    public void addNewCheckListAndRotationVerification () {
         int listSizeInitial = homePage.getListSize();
 
         homePage.addShoppingList("First list");
@@ -33,7 +31,6 @@ public class HomePageTests extends TestBase {
 
         Assert.assertEquals("First list", homePage.getFirstListText());
         Assert.assertEquals(listSizeActual, listSizeInitial + 1);
-
     }
 
     @Test
@@ -53,7 +50,5 @@ public class HomePageTests extends TestBase {
         int listSizeActual = homePage.getListSize();
 
         Assert.assertEquals(listSizeActual, listSizeInitial + 1);
-
     }
-
 }

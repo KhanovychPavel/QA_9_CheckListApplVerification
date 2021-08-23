@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.ItemInputPageHelper;
 
@@ -14,5 +15,10 @@ public class ItemInputPageTests extends TestBase {
         homePage.waitUntilPageIsLoaded();
         homePage.addShoppingList("First list");
         itemInputPage.waitUntilPageIsLoaded();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
     }
 }

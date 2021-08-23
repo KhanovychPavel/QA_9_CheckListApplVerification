@@ -18,9 +18,6 @@ public class HomePageHelper extends PageBase {
     @FindBy(id = "com.flt.checklist:id/text_layout")
     List<WebElement> listTitles;
 
-
-
-
     public HomePageHelper(WebDriver driver) {
         this.driver = driver;
     }
